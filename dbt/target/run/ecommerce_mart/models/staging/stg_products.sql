@@ -1,0 +1,16 @@
+
+
+  create or replace view `warehouse`.`stg_products` 
+  
+    
+    
+  as (
+    SELECT unique_id, product_name, brand_name, asin, category, upc_ean_code, list_price, selling_price, quantity, model_number, about_product, product_specification, technical_details, shipping_weight, product_dimensions, image, variants, sku, product_url, stock, product_details, dimensions, color, ingredients, direction_to_use, is_amazon_seller, size_quantity_variant, product_description, category_level_1, category_level_2, category_level_3, category_level_4, category_level_5, category_level_6, category_level_7, selling_price_lower, selling_price_upper
+FROM `warehouse`.`product_details`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    

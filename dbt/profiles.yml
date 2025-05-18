@@ -1,0 +1,14 @@
+ecommerce_mart:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: warehouse       # ClickHouse database
+      host: clickhouse        # Container name or hostname
+      port: 8123
+      user: default
+      password: "mypassword"
+      secure: False           # Set to True if using HTTPS
+      verify: False           # Set to True to verify TLS certs
+      database: warehouse       # Optional if same as schema
+      threads: 4

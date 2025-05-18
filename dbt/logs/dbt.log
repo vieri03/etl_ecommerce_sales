@@ -1,0 +1,2330 @@
+[0m11:28:50.067982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6267be24c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6265979e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6265979610>]}
+
+
+============================== 11:28:50.096219 | 58ea2341-c9ff-4917-bd17-447f2bbee6c2 ==============================
+[0m11:28:50.096219 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:28:50.097385 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt', 'log_path': '/opt/airflow/dbt/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --models staging.*', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:28:50.471650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '58ea2341-c9ff-4917-bd17-447f2bbee6c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f626583fbe0>]}
+[0m11:28:50.537156 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '58ea2341-c9ff-4917-bd17-447f2bbee6c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6265983c40>]}
+[0m11:28:50.544820 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m11:28:50.567195 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m11:28:50.728330 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m11:28:50.729441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '58ea2341-c9ff-4917-bd17-447f2bbee6c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f626674f4f0>]}
+[0m11:28:52.501106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '58ea2341-c9ff-4917-bd17-447f2bbee6c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6261d0be20>]}
+[0m11:28:52.681340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '58ea2341-c9ff-4917-bd17-447f2bbee6c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6261b9aee0>]}
+[0m11:28:52.683087 [info ] [MainThread]: Found 4 models, 3 sources, 423 macros
+[0m11:28:52.684012 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '58ea2341-c9ff-4917-bd17-447f2bbee6c2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6261c4db80>]}
+[0m11:28:52.686350 [info ] [MainThread]: 
+[0m11:28:52.687883 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:28:52.695395 [debug] [ThreadPool]: Acquiring new postgres connection 'list_warehouse'
+[0m11:28:52.755480 [debug] [ThreadPool]: Using postgres connection "list_warehouse"
+[0m11:28:52.756463 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:28:52.757180 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:28:52.768395 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "postgres" (172.20.0.2), port 5432 failed: FATAL:  database "warehouse" does not exist
+
+[0m11:28:52.775367 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:28:52.776343 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:28:52.777118 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m11:28:52.777824 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:28:52.778464 [debug] [ThreadPool]: On list_warehouse: No close available on handle
+[0m11:28:52.779835 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:28:52.780858 [debug] [MainThread]: Connection 'list_warehouse' was properly closed.
+[0m11:28:52.781827 [info ] [MainThread]: 
+[0m11:28:52.782617 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.09 seconds (0.09s).
+[0m11:28:52.783848 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "postgres" (172.20.0.2), port 5432 failed: FATAL:  database "warehouse" does not exist
+  
+[0m11:28:52.785923 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.8452437, "process_user_time": 4.544148, "process_kernel_time": 0.689112, "process_mem_max_rss": "152696", "process_in_blocks": "46744", "process_out_blocks": "2544", "command_success": false}
+[0m11:28:52.787153 [debug] [MainThread]: Command `dbt run` failed at 11:28:52.786846 after 2.85 seconds
+[0m11:28:52.788429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6267be24c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6261b55190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6261b3b220>]}
+[0m11:28:52.789451 [debug] [MainThread]: Flushing usage events
+[0m11:28:52.832917 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m11:32:46.725763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26309a6460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f262fb0e0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f262e7c4130>]}
+
+
+============================== 11:32:46.737980 | b6836383-3817-4be7-8b3b-55783ee61948 ==============================
+[0m11:32:46.737980 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:32:46.739505 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt/logs', 'debug': 'False', 'profiles_dir': '/opt/airflow/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --models staging.*', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:32:46.763629 [error] [MainThread]: Encountered an error:
+'type' object is not subscriptable
+[0m11:32:46.769677 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 215, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/runtime.py", line 71, in load_profile
+    profile = Profile.render(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/__init__.py", line 4, in <module>
+    from dbt.adapters.clickhouse.connections import ClickHouseConnectionManager  # noqa
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/connections.py", line 10, in <module>
+    from dbt.adapters.clickhouse.dbclient import ChRetryableException, get_db_client
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/dbclient.py", line 9, in <module>
+    from dbt.adapters.clickhouse.credentials import ClickHouseCredentials
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/credentials.py", line 9, in <module>
+    class ClickHouseCredentials(Credentials):
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/credentials.py", line 38, in ClickHouseCredentials
+    tcp_keepalive: Union[bool, tuple[int, int, int], list[int]] = False
+TypeError: 'type' object is not subscriptable
+
+[0m11:32:46.772204 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.16334745, "process_user_time": 2.149159, "process_kernel_time": 0.273713, "process_mem_max_rss": "152668", "process_in_blocks": "264", "command_success": false, "process_out_blocks": "0"}
+[0m11:32:46.773437 [debug] [MainThread]: Command `dbt run` failed at 11:32:46.773286 after 0.16 seconds
+[0m11:32:46.774198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f26309a6460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f262e701e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f262e701f70>]}
+[0m11:32:46.775060 [debug] [MainThread]: Flushing usage events
+[0m11:37:53.213249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6efe45490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6eef6a0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6edc67130>]}
+
+
+============================== 11:37:53.219499 | c10cbc75-27eb-47a4-9e9b-aeef98e05c00 ==============================
+[0m11:37:53.219499 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:37:53.220455 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dbt/logs', 'profiles_dir': '/opt/airflow/dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --models staging.*', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:37:53.235684 [error] [MainThread]: Encountered an error:
+'type' object is not subscriptable
+[0m11:37:53.237494 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 215, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/runtime.py", line 71, in load_profile
+    profile = Profile.render(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+    cls = load_plugin(typename)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/__init__.py", line 4, in <module>
+    from dbt.adapters.clickhouse.connections import ClickHouseConnectionManager  # noqa
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/connections.py", line 10, in <module>
+    from dbt.adapters.clickhouse.dbclient import ChRetryableException, get_db_client
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/dbclient.py", line 9, in <module>
+    from dbt.adapters.clickhouse.credentials import ClickHouseCredentials
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/credentials.py", line 9, in <module>
+    class ClickHouseCredentials(Credentials):
+  File "/home/airflow/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/credentials.py", line 38, in ClickHouseCredentials
+    tcp_keepalive: Union[bool, tuple[int, int, int], list[int]] = False
+TypeError: 'type' object is not subscriptable
+
+[0m11:37:53.238909 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.113623485, "process_user_time": 2.300185, "process_kernel_time": 0.19915, "process_mem_max_rss": "152660", "process_in_blocks": "616", "command_success": false, "process_out_blocks": "0"}
+[0m11:37:53.239885 [debug] [MainThread]: Command `dbt run` failed at 11:37:53.239732 after 0.11 seconds
+[0m11:37:53.240639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6efe45490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6edb9ee80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb6edb9ef70>]}
+[0m11:37:53.241316 [debug] [MainThread]: Flushing usage events
+[0m11:44:16.818925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcd8bdb4460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcd8850f0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcd8850f040>]}
+
+
+============================== 11:44:16.836970 | 5e748ee1-334e-4982-aab2-f15b9e72ed06 ==============================
+[0m11:44:16.836970 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:44:16.839275 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --models staging.*', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:44:16.916921 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "ecommerce_mart", target "dev" invalid: Runtime Error
+        schema: warehouse 
+        database: default 
+        cluster: None 
+    On Clickhouse, database must be omitted or have the same value as schema.
+[0m11:44:16.926278 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.2205224, "process_user_time": 2.501084, "process_kernel_time": 0.466472, "process_mem_max_rss": "152204", "process_in_blocks": "4264", "process_out_blocks": "2536", "command_success": false}
+[0m11:44:16.928395 [debug] [MainThread]: Command `dbt run` failed at 11:44:16.928225 after 0.22 seconds
+[0m11:44:16.930134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcd8bdb4460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcd88526410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcd885261a0>]}
+[0m11:44:16.932089 [debug] [MainThread]: Flushing usage events
+[0m11:45:29.062627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e5a2c3ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e57f47130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e57f470d0>]}
+
+
+============================== 11:45:29.069081 | 201bb2f8-792d-48fe-ac89-93b9d747c4c8 ==============================
+[0m11:45:29.069081 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:45:29.070908 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --models staging.*', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:45:29.309717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e5a1fb400>]}
+[0m11:45:29.375180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e58d1a9e0>]}
+[0m11:45:29.377996 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m11:45:29.503497 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m11:45:29.697050 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m11:45:29.699615 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m11:45:29.701456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e58ce4c40>]}
+[0m11:45:31.634132 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e5588c100>]}
+[0m11:45:31.826057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e558cbfa0>]}
+[0m11:45:31.828050 [info ] [MainThread]: Found 4 models, 3 sources, 471 macros
+[0m11:45:31.829743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e558cbf70>]}
+[0m11:45:31.833838 [info ] [MainThread]: 
+[0m11:45:31.836490 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m11:45:31.847131 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m11:45:31.872973 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:45:32.641516 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m11:45:32.646945 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m11:45:32.692548 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__warehouse)
+[0m11:45:32.704708 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list__warehouse"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'warehouse'
+      
+
+  ...
+[0m11:45:32.764503 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m11:45:32.768780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e558f7400>]}
+[0m11:45:32.771228 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:45:32.772833 [info ] [MainThread]: 
+[0m11:45:32.786758 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.stg_customers
+[0m11:45:32.787690 [debug] [Thread-2 (]: Began running node model.ecommerce_mart.stg_products
+[0m11:45:32.788610 [debug] [Thread-3 (]: Began running node model.ecommerce_mart.stg_sales
+[0m11:45:32.790315 [info ] [Thread-1 (]: 1 of 3 START sql view model `warehouse`.`stg_customers` ........................ [RUN]
+[0m11:45:32.792264 [info ] [Thread-2 (]: 2 of 3 START sql view model `warehouse`.`stg_products` ......................... [RUN]
+[0m11:45:32.794380 [info ] [Thread-3 (]: 3 of 3 START sql view model `warehouse`.`stg_sales` ............................ [RUN]
+[0m11:45:32.796009 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__warehouse, now model.ecommerce_mart.stg_customers)
+[0m11:45:32.798135 [debug] [Thread-2 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.stg_products'
+[0m11:45:32.799883 [debug] [Thread-3 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.stg_sales'
+[0m11:45:32.801466 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.stg_customers
+[0m11:45:32.803089 [debug] [Thread-2 (]: Began compiling node model.ecommerce_mart.stg_products
+[0m11:45:32.804800 [debug] [Thread-3 (]: Began compiling node model.ecommerce_mart.stg_sales
+[0m11:45:32.816586 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.stg_customers"
+[0m11:45:32.821556 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecommerce_mart.stg_products"
+[0m11:45:32.834103 [debug] [Thread-3 (]: Writing injected SQL for node "model.ecommerce_mart.stg_sales"
+[0m11:45:32.852777 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.stg_customers
+[0m11:45:32.943643 [debug] [Thread-3 (]: Began executing node model.ecommerce_mart.stg_sales
+[0m11:45:32.959260 [debug] [Thread-1 (]: Creating new relation stg_customers
+[0m11:45:32.964518 [debug] [Thread-3 (]: Creating new relation stg_sales
+[0m11:45:32.965248 [debug] [Thread-2 (]: Began executing node model.ecommerce_mart.stg_products
+[0m11:45:32.979580 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.stg_customers"
+[0m11:45:32.982005 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m11:45:32.987476 [debug] [Thread-2 (]: Creating new relation stg_products
+[0m11:45:32.994026 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:45:33.029431 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.stg_customers"} */
+
+
+  create or replace view `warehouse`.`stg_customers` 
+  
+    
+    
+  as (
+    SELECT customer_id, age, gender, item_purchased, category, purchase_amount_usd, location, `size`, color, season, review_rating, subscription_status, shipping_type, discount_applied, promo_code_used, previous_purchases, payment_method, frequency_of_purchases
+FROM `warehouse`.`customer_details`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m11:45:33.041358 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:45:33.075000 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7de18ed030>]}
+[0m11:45:33.078425 [info ] [Thread-1 (]: 1 of 3 OK created sql view model `warehouse`.`stg_customers` ................... [[32mOK[0m in 0.28s]
+[0m11:45:33.082788 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.stg_customers
+[0m11:45:33.086719 [debug] [Thread-3 (]: Writing runtime sql for node "model.ecommerce_mart.stg_sales"
+[0m11:45:33.090191 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecommerce_mart.stg_products"
+[0m11:45:33.095319 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.stg_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.stg_sales"} */
+
+
+  create or replace view `warehouse`.`stg_sales` 
+  
+    
+    
+  as (
+    SELECT user_id, product_id, interaction_type, time_stamp
+FROM `warehouse`.`sales`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m11:45:33.098281 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.stg_products: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.stg_products"} */
+
+
+  create or replace view `warehouse`.`stg_products` 
+  
+    
+    
+  as (
+    SELECT unique_id, product_name, brand_name, asin, category, upc_ean_code, list_price, selling_price, quantity, model_number, about_product, product_specification, technical_details, shipping_weight, product_dimensions, image, variants, sku, product_url, stock, product_details, dimensions, color, ingredients, direction_to_use, is_amazon_seller, size_quantity_variant, product_description, category_level_1, category_level_2, category_level_3, category_level_4, category_level_5, category_level_6, category_level_7, selling_price_lower, selling_price_upper
+FROM `warehouse`.`product_details`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m11:45:33.102380 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:45:33.106109 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7de18ece20>]}
+[0m11:45:33.107337 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:45:33.109038 [info ] [Thread-3 (]: 3 of 3 OK created sql view model `warehouse`.`stg_sales` ....................... [[32mOK[0m in 0.31s]
+[0m11:45:33.112738 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '201bb2f8-792d-48fe-ac89-93b9d747c4c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7de18ed210>]}
+[0m11:45:33.115250 [debug] [Thread-3 (]: Finished running node model.ecommerce_mart.stg_sales
+[0m11:45:33.117402 [info ] [Thread-2 (]: 2 of 3 OK created sql view model `warehouse`.`stg_products` .................... [[32mOK[0m in 0.32s]
+[0m11:45:33.119725 [debug] [Thread-2 (]: Finished running node model.ecommerce_mart.stg_products
+[0m11:45:33.122868 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:45:33.124303 [debug] [MainThread]: Connection 'model.ecommerce_mart.stg_customers' was left open.
+[0m11:45:33.125858 [debug] [MainThread]: On model.ecommerce_mart.stg_customers: Close
+[0m11:45:33.127400 [debug] [MainThread]: Connection 'model.ecommerce_mart.stg_products' was left open.
+[0m11:45:33.129149 [debug] [MainThread]: On model.ecommerce_mart.stg_products: Close
+[0m11:45:33.130951 [debug] [MainThread]: Connection 'model.ecommerce_mart.stg_sales' was left open.
+[0m11:45:33.132187 [debug] [MainThread]: On model.ecommerce_mart.stg_sales: Close
+[0m11:45:33.134462 [info ] [MainThread]: 
+[0m11:45:33.136050 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 1.30 seconds (1.30s).
+[0m11:45:33.138395 [debug] [MainThread]: Command end result
+[0m11:45:33.221128 [info ] [MainThread]: 
+[0m11:45:33.222895 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:45:33.224541 [info ] [MainThread]: 
+[0m11:45:33.226308 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m11:45:33.228973 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.278022, "process_user_time": 5.600967, "process_kernel_time": 1.746538, "process_mem_max_rss": "186408", "process_in_blocks": "200", "process_out_blocks": "0"}
+[0m11:45:33.230493 [debug] [MainThread]: Command `dbt run` succeeded at 11:45:33.230347 after 4.28 seconds
+[0m11:45:33.232412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e5a2c3ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e57e27a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e5a1fb400>]}
+[0m11:45:33.234338 [debug] [MainThread]: Flushing usage events
+[0m11:45:40.349228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf208bfc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1e53b0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1e53b040>]}
+
+
+============================== 11:45:40.357308 | 367997c1-220e-434c-abe3-23d05a26ee52 ==============================
+[0m11:45:40.357308 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:45:40.359008 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --models marts.*', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:45:40.614159 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '367997c1-220e-434c-abe3-23d05a26ee52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf207f7400>]}
+[0m11:45:40.683457 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '367997c1-220e-434c-abe3-23d05a26ee52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1f2e43a0>]}
+[0m11:45:40.686711 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m11:45:40.797882 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m11:45:41.085158 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:45:41.086676 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:45:41.140944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '367997c1-220e-434c-abe3-23d05a26ee52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1e040130>]}
+[0m11:45:41.324942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '367997c1-220e-434c-abe3-23d05a26ee52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1e018fd0>]}
+[0m11:45:41.327148 [info ] [MainThread]: Found 4 models, 3 sources, 471 macros
+[0m11:45:41.328900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '367997c1-220e-434c-abe3-23d05a26ee52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1e0191e0>]}
+[0m11:45:41.332387 [info ] [MainThread]: 
+[0m11:45:41.334561 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m11:45:41.337291 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m11:45:41.356558 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:45:42.072842 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m11:45:42.078887 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m11:45:42.103654 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__warehouse)
+[0m11:45:42.114703 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list__warehouse"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'warehouse'
+      
+
+  ...
+[0m11:45:42.122441 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:45:42.127280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '367997c1-220e-434c-abe3-23d05a26ee52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1e073700>]}
+[0m11:45:42.129401 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:45:42.130990 [info ] [MainThread]: 
+[0m11:45:42.228908 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:45:42.231054 [info ] [Thread-1 (]: 1 of 1 START sql table model `warehouse`.`average_purchase_amount_by_gender` ... [RUN]
+[0m11:45:42.232980 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__warehouse, now model.ecommerce_mart.average_purchase_amount_by_gender)
+[0m11:45:42.234523 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:45:42.246494 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.average_purchase_amount_by_gender"
+[0m11:45:42.264593 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:45:42.373579 [debug] [Thread-1 (]: Creating new relation average_purchase_amount_by_gender
+[0m11:45:42.412445 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.average_purchase_amount_by_gender"} */
+
+            
+
+    
+        create table `warehouse`.`average_purchase_amount_by_gender`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender;
+          )
+        
+        ...
+[0m11:45:42.421415 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.average_purchase_amount_by_gender"} */
+
+            
+
+    
+        create table `warehouse`.`average_purchase_amount_by_gender`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender;
+          )
+        
+        
+[0m11:45:42.426903 [debug] [Thread-1 (]: Database Error in model average_purchase_amount_by_gender (models/marts/average_purchase_amount_by_gender.sql)
+  HTTPDriver for http://clickhouse:8123 received ClickHouse error code 62
+   Code: 62. DB::Exception: Syntax error: failed at position 641 (end of query) (line 25, col 16): ;
+            )
+          
+          . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, Comma, WITH, HAVING, WINDOW, QUALIFY, ORDER BY, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. (SYNTAX_ERROR) (version 25.4.4.25 (official build))
+[0m11:45:42.430511 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '367997c1-220e-434c-abe3-23d05a26ee52', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbee5fe2500>]}
+[0m11:45:42.432968 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model `warehouse`.`average_purchase_amount_by_gender`  [[31mERROR[0m in 0.20s]
+[0m11:45:42.434898 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:45:42.439151 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:45:42.440890 [debug] [MainThread]: Connection 'model.ecommerce_mart.average_purchase_amount_by_gender' was left open.
+[0m11:45:42.442664 [debug] [MainThread]: On model.ecommerce_mart.average_purchase_amount_by_gender: Close
+[0m11:45:42.445096 [info ] [MainThread]: 
+[0m11:45:42.446815 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.11 seconds (1.11s).
+[0m11:45:42.448598 [debug] [MainThread]: Command end result
+[0m11:45:42.526278 [info ] [MainThread]: 
+[0m11:45:42.527987 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m11:45:42.529749 [info ] [MainThread]: 
+[0m11:45:42.531355 [error] [MainThread]:   Database Error in model average_purchase_amount_by_gender (models/marts/average_purchase_amount_by_gender.sql)
+  HTTPDriver for http://clickhouse:8123 received ClickHouse error code 62
+   Code: 62. DB::Exception: Syntax error: failed at position 641 (end of query) (line 25, col 16): ;
+            )
+          
+          . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, Comma, WITH, HAVING, WINDOW, QUALIFY, ORDER BY, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. (SYNTAX_ERROR) (version 25.4.4.25 (official build))
+[0m11:45:42.532872 [info ] [MainThread]: 
+[0m11:45:42.534330 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m11:45:42.536551 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.2751672, "process_user_time": 3.943099, "process_kernel_time": 1.464579, "process_mem_max_rss": "198200", "process_in_blocks": "16", "command_success": false, "process_out_blocks": "0"}
+[0m11:45:42.538200 [debug] [MainThread]: Command `dbt run` failed at 11:45:42.538079 after 2.28 seconds
+[0m11:45:42.539914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf208bfc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf1f2e43a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf207cbac0>]}
+[0m11:45:42.541911 [debug] [MainThread]: Flushing usage events
+[0m11:47:57.044276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4629eabbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4627b2f070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4627b2f010>]}
+
+
+============================== 11:47:57.051053 | cb3e8696-18ce-424e-9a4f-0e6c9bf99018 ==============================
+[0m11:47:57.051053 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:47:57.053131 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --models marts.*', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:47:57.298187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cb3e8696-18ce-424e-9a4f-0e6c9bf99018', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4627abc8b0>]}
+[0m11:47:57.366871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cb3e8696-18ce-424e-9a4f-0e6c9bf99018', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f46288fd8a0>]}
+[0m11:47:57.369410 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m11:47:57.480850 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m11:47:57.786007 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:47:57.788592 [debug] [MainThread]: Partial parsing: updated file: ecommerce_mart://models/marts/average_purchase_amount_by_gender.sql
+[0m11:47:58.122917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cb3e8696-18ce-424e-9a4f-0e6c9bf99018', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f46275a67a0>]}
+[0m11:47:58.400837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cb3e8696-18ce-424e-9a4f-0e6c9bf99018', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4627635c00>]}
+[0m11:47:58.402496 [info ] [MainThread]: Found 4 models, 3 sources, 471 macros
+[0m11:47:58.404485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cb3e8696-18ce-424e-9a4f-0e6c9bf99018', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f46276344c0>]}
+[0m11:47:58.407336 [info ] [MainThread]: 
+[0m11:47:58.409344 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m11:47:58.412924 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m11:47:58.430518 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:47:59.308449 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m11:47:59.313984 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m11:47:59.353705 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__warehouse)
+[0m11:47:59.366824 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list__warehouse"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'warehouse'
+      
+
+  ...
+[0m11:47:59.374982 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:47:59.379604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cb3e8696-18ce-424e-9a4f-0e6c9bf99018', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f462546f370>]}
+[0m11:47:59.382193 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:47:59.383960 [info ] [MainThread]: 
+[0m11:47:59.400351 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:47:59.404042 [info ] [Thread-1 (]: 1 of 1 START sql table model `warehouse`.`average_purchase_amount_by_gender` ... [RUN]
+[0m11:47:59.406365 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__warehouse, now model.ecommerce_mart.average_purchase_amount_by_gender)
+[0m11:47:59.408748 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:47:59.427008 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.average_purchase_amount_by_gender"
+[0m11:47:59.441835 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:47:59.479132 [debug] [Thread-1 (]: Creating new relation average_purchase_amount_by_gender
+[0m11:47:59.516063 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.average_purchase_amount_by_gender"} */
+
+            
+
+    
+        create table `warehouse`.`average_purchase_amount_by_gender`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender
+          )
+        
+        ...
+[0m11:47:59.532522 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:47:59.552211 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.average_purchase_amount_by_gender"} */
+
+    select name, type from system.columns where table = 'average_purchase_amount_by_gender'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m11:47:59.559571 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:47:59.565954 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.average_purchase_amount_by_gender"
+[0m11:47:59.583935 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.average_purchase_amount_by_gender"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`average_purchase_amount_by_gender`
+        ("gender", "avg_amount")SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender
+  ...
+[0m11:47:59.593546 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m11:47:59.621873 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cb3e8696-18ce-424e-9a4f-0e6c9bf99018', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f462bc9f910>]}
+[0m11:47:59.624053 [info ] [Thread-1 (]: 1 of 1 OK created sql table model `warehouse`.`average_purchase_amount_by_gender`  [[32mOK[0m in 0.21s]
+[0m11:47:59.626400 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.average_purchase_amount_by_gender
+[0m11:47:59.630279 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:47:59.631814 [debug] [MainThread]: Connection 'model.ecommerce_mart.average_purchase_amount_by_gender' was left open.
+[0m11:47:59.633323 [debug] [MainThread]: On model.ecommerce_mart.average_purchase_amount_by_gender: Close
+[0m11:47:59.634979 [info ] [MainThread]: 
+[0m11:47:59.636573 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.23 seconds (1.23s).
+[0m11:47:59.638660 [debug] [MainThread]: Command end result
+[0m11:47:59.738908 [info ] [MainThread]: 
+[0m11:47:59.740812 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:47:59.742476 [info ] [MainThread]: 
+[0m11:47:59.744297 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m11:47:59.746407 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.788541, "process_user_time": 4.345882, "process_kernel_time": 1.669945, "process_mem_max_rss": "190772", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m11:47:59.748166 [debug] [MainThread]: Command `dbt run` succeeded at 11:47:59.748023 after 2.79 seconds
+[0m11:47:59.750027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4629eabbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4628451540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f45b1786bc0>]}
+[0m11:47:59.751708 [debug] [MainThread]: Flushing usage events
+[0m11:48:07.200093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c393ebbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c3706b070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c3706b010>]}
+
+
+============================== 11:48:07.208605 | ddf79c9d-e1c9-4e09-9288-ae2e8c7915ca ==============================
+[0m11:48:07.208605 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:48:07.210599 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:48:07.449460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ddf79c9d-e1c9-4e09-9288-ae2e8c7915ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c36ff48b0>]}
+[0m11:48:07.520828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ddf79c9d-e1c9-4e09-9288-ae2e8c7915ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c3798fac0>]}
+[0m11:48:07.523663 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m11:48:07.649644 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m11:48:07.946502 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:48:07.948155 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:48:07.998592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ddf79c9d-e1c9-4e09-9288-ae2e8c7915ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c36b80130>]}
+[0m11:48:08.178151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ddf79c9d-e1c9-4e09-9288-ae2e8c7915ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c36ba9b70>]}
+[0m11:48:08.180534 [info ] [MainThread]: Found 4 models, 3 sources, 471 macros
+[0m11:48:08.182498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ddf79c9d-e1c9-4e09-9288-ae2e8c7915ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c36d154b0>]}
+[0m11:48:08.186171 [info ] [MainThread]: 
+[0m11:48:08.188149 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m11:48:08.192408 [debug] [MainThread]: Command end result
+[0m11:48:08.264727 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.1528574, "process_user_time": 3.072321, "process_kernel_time": 0.28741, "process_mem_max_rss": "152196", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m11:48:08.266600 [debug] [MainThread]: Command `dbt test` succeeded at 11:48:08.266341 after 1.15 seconds
+[0m11:48:08.268360 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c393ebbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c37ddfdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c3798d540>]}
+[0m11:48:08.269619 [debug] [MainThread]: Flushing usage events
+[0m12:00:05.649702 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff264f7fc40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff262bfb100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff262bfb0a0>]}
+
+
+============================== 12:00:05.656734 | 4b30b7ec-3f43-4a2d-9096-35697d64108c ==============================
+[0m12:00:05.656734 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:00:05.658823 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt', 'log_path': '/opt/airflow/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --models staging.*', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:00:05.880205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff262bf2980>]}
+[0m12:00:05.945191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2639d6680>]}
+[0m12:00:05.947570 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m12:00:06.070880 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m12:00:06.542585 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 8 files added, 0 files changed.
+[0m12:00:06.544324 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_most_popular_categories.sql
+[0m12:00:06.545727 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_customer_segmentation.sql
+[0m12:00:06.547532 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_subscription_effectiveness.sql
+[0m12:00:06.549223 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_monthly_sales.sql
+[0m12:00:06.550674 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_average_purchase_amount_by_gender.sql
+[0m12:00:06.551966 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_customers_with_highest_purchase_amount.sql
+[0m12:00:06.553480 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_price_ranges_analysis.sql
+[0m12:00:06.554872 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_most_common_payment_methods.sql
+[0m12:00:06.556231 [debug] [MainThread]: Partial parsing: deleted file: ecommerce_mart://models/marts/average_purchase_amount_by_gender.sql
+[0m12:00:06.980519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff262670df0>]}
+[0m12:00:07.254866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff262643400>]}
+[0m12:00:07.256585 [info ] [MainThread]: Found 11 models, 3 sources, 471 macros
+[0m12:00:07.258297 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff262641ff0>]}
+[0m12:00:07.262014 [info ] [MainThread]: 
+[0m12:00:07.264308 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m12:00:07.274969 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m12:00:07.291760 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:00:08.079475 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m12:00:08.085972 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:00:08.131018 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__warehouse)
+[0m12:00:08.142356 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list__warehouse"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'warehouse'
+      
+
+  ...
+[0m12:00:08.150590 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:08.156764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2628908e0>]}
+[0m12:00:08.159376 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:00:08.161600 [info ] [MainThread]: 
+[0m12:00:08.173269 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.stg_customers
+[0m12:00:08.174755 [debug] [Thread-2 (]: Began running node model.ecommerce_mart.stg_products
+[0m12:00:08.176617 [debug] [Thread-3 (]: Began running node model.ecommerce_mart.stg_sales
+[0m12:00:08.178668 [info ] [Thread-1 (]: 1 of 3 START sql view model `warehouse`.`stg_customers` ........................ [RUN]
+[0m12:00:08.180914 [info ] [Thread-2 (]: 2 of 3 START sql view model `warehouse`.`stg_products` ......................... [RUN]
+[0m12:00:08.182774 [info ] [Thread-3 (]: 3 of 3 START sql view model `warehouse`.`stg_sales` ............................ [RUN]
+[0m12:00:08.184306 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__warehouse, now model.ecommerce_mart.stg_customers)
+[0m12:00:08.186029 [debug] [Thread-2 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.stg_products'
+[0m12:00:08.187491 [debug] [Thread-3 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.stg_sales'
+[0m12:00:08.189327 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.stg_customers
+[0m12:00:08.191256 [debug] [Thread-2 (]: Began compiling node model.ecommerce_mart.stg_products
+[0m12:00:08.193567 [debug] [Thread-3 (]: Began compiling node model.ecommerce_mart.stg_sales
+[0m12:00:08.206499 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.stg_customers"
+[0m12:00:08.213171 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecommerce_mart.stg_products"
+[0m12:00:08.218480 [debug] [Thread-3 (]: Writing injected SQL for node "model.ecommerce_mart.stg_sales"
+[0m12:00:08.226676 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.stg_customers
+[0m12:00:08.228204 [debug] [Thread-2 (]: Began executing node model.ecommerce_mart.stg_products
+[0m12:00:08.229180 [debug] [Thread-3 (]: Began executing node model.ecommerce_mart.stg_sales
+[0m12:00:08.249437 [debug] [Thread-1 (]: Relation stg_customers already exists, replacing it
+[0m12:00:08.253920 [debug] [Thread-2 (]: Relation stg_products already exists, replacing it
+[0m12:00:08.258800 [debug] [Thread-3 (]: Relation stg_sales already exists, replacing it
+[0m12:00:08.275104 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.stg_customers"
+[0m12:00:08.279301 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:00:08.282920 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:00:08.296488 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.stg_customers"} */
+
+
+  create or replace view `warehouse`.`stg_customers` 
+  
+    
+    
+  as (
+    SELECT customer_id, age, gender, item_purchased, category, purchase_amount_usd, location, `size`, color, season, review_rating, subscription_status, shipping_type, discount_applied, promo_code_used, previous_purchases, payment_method, frequency_of_purchases
+FROM `warehouse`.`customer_details`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m12:00:08.315172 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:08.355349 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff266d5b880>]}
+[0m12:00:08.360231 [info ] [Thread-1 (]: 1 of 3 OK created sql view model `warehouse`.`stg_customers` ................... [[32mOK[0m in 0.17s]
+[0m12:00:08.362556 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.stg_customers
+[0m12:00:08.386919 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecommerce_mart.stg_products"
+[0m12:00:08.390998 [debug] [Thread-3 (]: Writing runtime sql for node "model.ecommerce_mart.stg_sales"
+[0m12:00:08.398822 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.stg_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.stg_sales"} */
+
+
+  create or replace view `warehouse`.`stg_sales` 
+  
+    
+    
+  as (
+    SELECT user_id, product_id, interaction_type, time_stamp
+FROM `warehouse`.`sales`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m12:00:08.399646 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.stg_products: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.stg_products"} */
+
+
+  create or replace view `warehouse`.`stg_products` 
+  
+    
+    
+  as (
+    SELECT unique_id, product_name, brand_name, asin, category, upc_ean_code, list_price, selling_price, quantity, model_number, about_product, product_specification, technical_details, shipping_weight, product_dimensions, image, variants, sku, product_url, stock, product_details, dimensions, color, ingredients, direction_to_use, is_amazon_seller, size_quantity_variant, product_description, category_level_1, category_level_2, category_level_3, category_level_4, category_level_5, category_level_6, category_level_7, selling_price_lower, selling_price_upper
+FROM `warehouse`.`product_details`
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m12:00:08.408651 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:08.414250 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff26399f520>]}
+[0m12:00:08.415576 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:08.417342 [info ] [Thread-3 (]: 3 of 3 OK created sql view model `warehouse`.`stg_sales` ....................... [[32mOK[0m in 0.23s]
+[0m12:00:08.421661 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4b30b7ec-3f43-4a2d-9096-35697d64108c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff265b9f490>]}
+[0m12:00:08.423966 [debug] [Thread-3 (]: Finished running node model.ecommerce_mart.stg_sales
+[0m12:00:08.426250 [info ] [Thread-2 (]: 2 of 3 OK created sql view model `warehouse`.`stg_products` .................... [[32mOK[0m in 0.24s]
+[0m12:00:08.430187 [debug] [Thread-2 (]: Finished running node model.ecommerce_mart.stg_products
+[0m12:00:08.434231 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:00:08.436102 [debug] [MainThread]: Connection 'model.ecommerce_mart.stg_customers' was left open.
+[0m12:00:08.438202 [debug] [MainThread]: On model.ecommerce_mart.stg_customers: Close
+[0m12:00:08.440093 [debug] [MainThread]: Connection 'model.ecommerce_mart.stg_products' was left open.
+[0m12:00:08.441732 [debug] [MainThread]: On model.ecommerce_mart.stg_products: Close
+[0m12:00:08.443298 [debug] [MainThread]: Connection 'model.ecommerce_mart.stg_sales' was left open.
+[0m12:00:08.445394 [debug] [MainThread]: On model.ecommerce_mart.stg_sales: Close
+[0m12:00:08.447836 [info ] [MainThread]: 
+[0m12:00:08.449359 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 1.18 seconds (1.18s).
+[0m12:00:08.452081 [debug] [MainThread]: Command end result
+[0m12:00:08.540802 [info ] [MainThread]: 
+[0m12:00:08.542634 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:00:08.544186 [info ] [MainThread]: 
+[0m12:00:08.545780 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m12:00:08.548339 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.9911866, "process_user_time": 4.20575, "process_kernel_time": 1.89905, "process_mem_max_rss": "177844", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:00:08.550678 [debug] [MainThread]: Command `dbt run` succeeded at 12:00:08.550394 after 2.99 seconds
+[0m12:00:08.552532 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff264f7fc40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2653ef0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2639d6680>]}
+[0m12:00:08.554215 [debug] [MainThread]: Flushing usage events
+[0m12:00:16.829469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fd747c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fb3cb100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fb3cb0a0>]}
+
+
+============================== 12:00:16.835915 | 3431a9a4-ed95-44cc-84e4-9238733b982c ==============================
+[0m12:00:16.835915 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:00:16.838162 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dbt/logs', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --models marts.*', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:00:17.048408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fb3c2980>]}
+[0m12:00:17.109242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fc19a680>]}
+[0m12:00:17.111145 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m12:00:17.220424 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m12:00:17.555347 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:00:17.557288 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:00:17.605730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1faf01ea0>]}
+[0m12:00:17.779686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1faf1f6a0>]}
+[0m12:00:17.781446 [info ] [MainThread]: Found 11 models, 3 sources, 471 macros
+[0m12:00:17.783192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1faf1ff70>]}
+[0m12:00:17.787032 [info ] [MainThread]: 
+[0m12:00:17.788930 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m12:00:17.798124 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m12:00:17.813370 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:00:18.335230 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m12:00:18.339227 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:00:18.359295 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__warehouse)
+[0m12:00:18.369416 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list__warehouse"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'warehouse'
+      
+
+  ...
+[0m12:00:18.377254 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.382091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1faf2f070>]}
+[0m12:00:18.383665 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:00:18.384927 [info ] [MainThread]: 
+[0m12:00:18.394797 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:00:18.395386 [debug] [Thread-2 (]: Began running node model.ecommerce_mart.dm_customer_segmentation
+[0m12:00:18.395964 [debug] [Thread-3 (]: Began running node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:00:18.396671 [debug] [Thread-4 (]: Began running node model.ecommerce_mart.dm_monthly_sales
+[0m12:00:18.397655 [info ] [Thread-1 (]: 1 of 8 START sql table model `warehouse`.`dm_average_purchase_amount_by_gender`  [RUN]
+[0m12:00:18.399208 [info ] [Thread-2 (]: 2 of 8 START sql table model `warehouse`.`dm_customer_segmentation` ............ [RUN]
+[0m12:00:18.400983 [info ] [Thread-3 (]: 3 of 8 START sql table model `warehouse`.`dm_customers_with_highest_purchase_amount`  [RUN]
+[0m12:00:18.402271 [info ] [Thread-4 (]: 4 of 8 START sql table model `warehouse`.`dm_monthly_sales` .................... [RUN]
+[0m12:00:18.403944 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__warehouse, now model.ecommerce_mart.dm_average_purchase_amount_by_gender)
+[0m12:00:18.405307 [debug] [Thread-2 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.dm_customer_segmentation'
+[0m12:00:18.406676 [debug] [Thread-3 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.dm_customers_with_highest_purchase_amount'
+[0m12:00:18.408005 [debug] [Thread-4 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.dm_monthly_sales'
+[0m12:00:18.409590 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:00:18.411246 [debug] [Thread-2 (]: Began compiling node model.ecommerce_mart.dm_customer_segmentation
+[0m12:00:18.412921 [debug] [Thread-3 (]: Began compiling node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:00:18.414096 [debug] [Thread-4 (]: Began compiling node model.ecommerce_mart.dm_monthly_sales
+[0m12:00:18.497058 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.dm_average_purchase_amount_by_gender"
+[0m12:00:18.501357 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecommerce_mart.dm_customer_segmentation"
+[0m12:00:18.505204 [debug] [Thread-3 (]: Writing injected SQL for node "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"
+[0m12:00:18.509485 [debug] [Thread-4 (]: Writing injected SQL for node "model.ecommerce_mart.dm_monthly_sales"
+[0m12:00:18.517045 [debug] [Thread-2 (]: Began executing node model.ecommerce_mart.dm_customer_segmentation
+[0m12:00:18.549981 [debug] [Thread-2 (]: Creating new relation dm_customer_segmentation
+[0m12:00:18.550844 [debug] [Thread-3 (]: Began executing node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:00:18.551645 [debug] [Thread-4 (]: Began executing node model.ecommerce_mart.dm_monthly_sales
+[0m12:00:18.552677 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:00:18.579943 [debug] [Thread-3 (]: Creating new relation dm_customers_with_highest_purchase_amount
+[0m12:00:18.590887 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:00:18.595007 [debug] [Thread-4 (]: Creating new relation dm_monthly_sales
+[0m12:00:18.598881 [debug] [Thread-1 (]: Creating new relation dm_average_purchase_amount_by_gender
+[0m12:00:18.601821 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:00:18.606453 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:00:18.610131 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+
+            
+
+    
+        create table `warehouse`.`dm_average_purchase_amount_by_gender`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender
+          )
+        
+        ...
+[0m12:00:18.688042 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m12:00:18.716915 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+
+    select name, type from system.columns where table = 'dm_average_purchase_amount_by_gender'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:00:18.727074 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customers_with_highest_purchase_amount: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"} */
+
+            
+
+    
+        create table `warehouse`.`dm_customers_with_highest_purchase_amount`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT customer_id, SUM(purchase_amount_usd) AS total_spent
+FROM { ref('stg_customers') }
+GROUP BY customer_id
+ORDER BY total_spent DESC
+LIMIT 50
+          )
+        
+        ...
+[0m12:00:18.728147 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:00:18.729360 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+
+            
+
+    
+        create table `warehouse`.`dm_customer_segmentation`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT age, gender, COUNT(*) AS total 
+FROM `warehouse`.`stg_customers` 
+GROUP BY age, gender ORDER BY total DESC
+          )
+        
+        ...
+[0m12:00:18.730495 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+
+            
+
+    
+        create table `warehouse`.`dm_monthly_sales`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT toStartOfMonth(time_stamp) AS month, COUNT(*) AS sales_count
+FROM `warehouse`.`stg_sales`
+GROUP BY month
+ORDER BY month
+          )
+        
+        ...
+[0m12:00:18.736562 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.dm_average_purchase_amount_by_gender"
+[0m12:00:18.739852 [debug] [Thread-3 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"} */
+
+            
+
+    
+        create table `warehouse`.`dm_customers_with_highest_purchase_amount`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT customer_id, SUM(purchase_amount_usd) AS total_spent
+FROM { ref('stg_customers') }
+GROUP BY customer_id
+ORDER BY total_spent DESC
+LIMIT 50
+          )
+        
+        
+[0m12:00:18.746132 [debug] [Thread-3 (]: Database Error in model dm_customers_with_highest_purchase_amount (models/marts/dm_customers_with_highest_purchase_amount.sql)
+  HTTPDriver for http://clickhouse:8123 received ClickHouse error code 62
+   Code: 62. DB::Exception: Syntax error: failed at position 626 (() (line 24, col 11): ('stg_customers') }
+  GROUP BY customer_id
+  ORDER BY total_spent DESC
+  LIMIT 50
+            )
+          
+          . Expected colon between name and type. (SYNTAX_ERROR) (version 25.4.4.25 (official build))
+[0m12:00:18.749702 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fc163520>]}
+[0m12:00:18.753212 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_average_purchase_amount_by_gender`
+        ("gender", "avg_amount")SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender
+  ...
+[0m12:00:18.752482 [error] [Thread-3 (]: 3 of 8 ERROR creating sql table model `warehouse`.`dm_customers_with_highest_purchase_amount`  [[31mERROR[0m in 0.34s]
+[0m12:00:18.756662 [debug] [Thread-3 (]: Finished running node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:00:18.757742 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:00:18.759229 [debug] [Thread-3 (]: Began running node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:00:18.761824 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:00:18.766422 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+
+    select name, type from system.columns where table = 'dm_customer_segmentation'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:00:18.767517 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.769097 [info ] [Thread-3 (]: 5 of 8 START sql table model `warehouse`.`dm_most_common_payment_methods` ...... [RUN]
+[0m12:00:18.774012 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+
+    select name, type from system.columns where table = 'dm_monthly_sales'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:00:18.789237 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.803881 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fe36f460>]}
+[0m12:00:18.805129 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_customers_with_highest_purchase_amount, now model.ecommerce_mart.dm_most_common_payment_methods)
+[0m12:00:18.809510 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecommerce_mart.dm_customer_segmentation"
+[0m12:00:18.811078 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:00:18.812574 [info ] [Thread-1 (]: 1 of 8 OK created sql table model `warehouse`.`dm_average_purchase_amount_by_gender`  [[32mOK[0m in 0.40s]
+[0m12:00:18.813812 [debug] [Thread-3 (]: Began compiling node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:00:18.817454 [debug] [Thread-4 (]: Writing runtime sql for node "model.ecommerce_mart.dm_monthly_sales"
+[0m12:00:18.819132 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:00:18.823993 [debug] [Thread-3 (]: Writing injected SQL for node "model.ecommerce_mart.dm_most_common_payment_methods"
+[0m12:00:18.826737 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.dm_most_popular_categories
+[0m12:00:18.829490 [info ] [Thread-1 (]: 6 of 8 START sql table model `warehouse`.`dm_most_popular_categories` .......... [RUN]
+[0m12:00:18.831505 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_average_purchase_amount_by_gender, now model.ecommerce_mart.dm_most_popular_categories)
+[0m12:00:18.832659 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.dm_most_popular_categories
+[0m12:00:18.841144 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_customer_segmentation`
+        ("age", "gender", "total")SELECT age, gender, COUNT(*) AS total 
+FROM `warehouse`.`stg_customers` 
+GROUP BY age, gender ORDER BY total DESC
+  ...
+[0m12:00:18.842183 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.dm_most_popular_categories"
+[0m12:00:18.845076 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_monthly_sales`
+        ("month", "sales_count")SELECT toStartOfMonth(time_stamp) AS month, COUNT(*) AS sales_count
+FROM `warehouse`.`stg_sales`
+GROUP BY month
+ORDER BY month
+  ...
+[0m12:00:18.845879 [debug] [Thread-3 (]: Began executing node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:00:18.853612 [debug] [Thread-3 (]: Creating new relation dm_most_common_payment_methods
+[0m12:00:18.855384 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.857122 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.859084 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+
+            
+
+    
+        create table `warehouse`.`dm_most_common_payment_methods`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT payment_method, COUNT(*) AS num
+FROM `warehouse`.`stg_customers`
+GROUP BY payment_method
+ORDER BY num DESC
+          )
+        
+        ...
+[0m12:00:18.863327 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1c31076d0>]}
+[0m12:00:18.863958 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.dm_most_popular_categories
+[0m12:00:18.867289 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1c31052a0>]}
+[0m12:00:18.871230 [info ] [Thread-2 (]: 2 of 8 OK created sql table model `warehouse`.`dm_customer_segmentation` ....... [[32mOK[0m in 0.46s]
+[0m12:00:18.875896 [debug] [Thread-1 (]: Creating new relation dm_most_popular_categories
+[0m12:00:18.877642 [info ] [Thread-4 (]: 4 of 8 OK created sql table model `warehouse`.`dm_monthly_sales` ............... [[32mOK[0m in 0.46s]
+[0m12:00:18.879544 [debug] [Thread-2 (]: Finished running node model.ecommerce_mart.dm_customer_segmentation
+[0m12:00:18.882171 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+
+            
+
+    
+        create table `warehouse`.`dm_most_popular_categories`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT category, COUNT(*) AS product_count
+FROM `warehouse`.`stg_products`
+GROUP BY category
+ORDER BY product_count DESC
+          )
+        
+        ...
+[0m12:00:18.884093 [debug] [Thread-4 (]: Finished running node model.ecommerce_mart.dm_monthly_sales
+[0m12:00:18.885695 [debug] [Thread-2 (]: Began running node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:00:18.889657 [debug] [Thread-4 (]: Began running node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:00:18.890833 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:00:18.892020 [info ] [Thread-2 (]: 7 of 8 START sql table model `warehouse`.`dm_price_ranges_analysis` ............ [RUN]
+[0m12:00:18.893784 [info ] [Thread-4 (]: 8 of 8 START sql table model `warehouse`.`dm_subscription_effectiveness` ....... [RUN]
+[0m12:00:18.898985 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+
+    select name, type from system.columns where table = 'dm_most_common_payment_methods'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:00:18.900837 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_customer_segmentation, now model.ecommerce_mart.dm_price_ranges_analysis)
+[0m12:00:18.902155 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.903517 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_monthly_sales, now model.ecommerce_mart.dm_subscription_effectiveness)
+[0m12:00:18.907763 [debug] [Thread-2 (]: Began compiling node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:00:18.909346 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:00:18.913885 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+
+    select name, type from system.columns where table = 'dm_most_popular_categories'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:00:18.915845 [debug] [Thread-4 (]: Began compiling node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:00:18.920504 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecommerce_mart.dm_price_ranges_analysis"
+[0m12:00:18.923518 [debug] [Thread-3 (]: Writing runtime sql for node "model.ecommerce_mart.dm_most_common_payment_methods"
+[0m12:00:18.932576 [debug] [Thread-4 (]: Writing injected SQL for node "model.ecommerce_mart.dm_subscription_effectiveness"
+[0m12:00:18.933868 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.940186 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.dm_most_popular_categories"
+[0m12:00:18.975043 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_most_common_payment_methods`
+        ("payment_method", "num")SELECT payment_method, COUNT(*) AS num
+FROM `warehouse`.`stg_customers`
+GROUP BY payment_method
+ORDER BY num DESC
+  ...
+[0m12:00:18.975739 [debug] [Thread-2 (]: Began executing node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:00:18.978363 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_most_popular_categories`
+        ("category", "product_count")SELECT category, COUNT(*) AS product_count
+FROM `warehouse`.`stg_products`
+GROUP BY category
+ORDER BY product_count DESC
+  ...
+[0m12:00:18.979095 [debug] [Thread-4 (]: Began executing node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:00:18.983700 [debug] [Thread-2 (]: Creating new relation dm_price_ranges_analysis
+[0m12:00:18.986981 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:18.992430 [debug] [Thread-4 (]: Creating new relation dm_subscription_effectiveness
+[0m12:00:18.995761 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+
+            
+
+    
+        create table `warehouse`.`dm_price_ranges_analysis`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT
+  CASE
+    WHEN (selling_price_upper) < 20 THEN '<$20'
+    WHEN (selling_price_upper) < 50 THEN '$20-49'
+    WHEN (selling_price_upper) < 100 THEN '$50-99'
+    ELSE '$100+'
+  END AS price_range,
+  COUNT(*) AS count
+FROM `warehouse`.`stg_products`
+GROUP BY price_range
+          )
+        
+        ...
+[0m12:00:18.999571 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1faf01120>]}
+[0m12:00:19.002566 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+
+            
+
+    
+        create table `warehouse`.`dm_subscription_effectiveness`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT subscription_status, AVG(purchase_amount_usd) AS avg_spent
+FROM `warehouse`.`stg_customers`
+GROUP BY subscription_status
+          )
+        
+        ...
+[0m12:00:19.006763 [info ] [Thread-3 (]: 5 of 8 OK created sql table model `warehouse`.`dm_most_common_payment_methods` . [[32mOK[0m in 0.19s]
+[0m12:00:19.010076 [debug] [Thread-3 (]: Finished running node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:00:19.015904 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:19.017015 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:19.022042 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+
+    select name, type from system.columns where table = 'dm_price_ranges_analysis'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:00:19.026993 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+
+    select name, type from system.columns where table = 'dm_subscription_effectiveness'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:00:19.033357 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:00:19.035582 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:00:19.038445 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecommerce_mart.dm_price_ranges_analysis"
+[0m12:00:19.041875 [debug] [Thread-4 (]: Writing runtime sql for node "model.ecommerce_mart.dm_subscription_effectiveness"
+[0m12:00:19.050115 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_price_ranges_analysis`
+        ("price_range", "count")SELECT
+  CASE
+    WHEN (selling_price_upper) < 20 THEN '<$20'
+    WHEN (selling_price_upper) < 50 THEN '$20-49'
+    WHEN (selling_price_upper) < 100 THEN '$50-99'
+    ELSE '$100+'
+  END AS price_range,
+  COUNT(*) AS count
+FROM `warehouse`.`stg_products`
+GROUP BY price_range
+  ...
+[0m12:00:19.053176 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_subscription_effectiveness`
+        ("subscription_status", "avg_spent")SELECT subscription_status, AVG(purchase_amount_usd) AS avg_spent
+FROM `warehouse`.`stg_customers`
+GROUP BY subscription_status
+  ...
+[0m12:00:19.062781 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:00:19.066346 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1c0606a40>]}
+[0m12:00:19.068615 [info ] [Thread-4 (]: 8 of 8 OK created sql table model `warehouse`.`dm_subscription_effectiveness` .. [[32mOK[0m in 0.16s]
+[0m12:00:19.070849 [debug] [Thread-4 (]: Finished running node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:00:19.097218 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m12:00:19.098147 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.11 seconds
+[0m12:00:19.101874 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1c05e14e0>]}
+[0m12:00:19.106508 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3431a9a4-ed95-44cc-84e4-9238733b982c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1c046b730>]}
+[0m12:00:19.108564 [info ] [Thread-2 (]: 7 of 8 OK created sql table model `warehouse`.`dm_price_ranges_analysis` ....... [[32mOK[0m in 0.20s]
+[0m12:00:19.110615 [info ] [Thread-1 (]: 6 of 8 OK created sql table model `warehouse`.`dm_most_popular_categories` ..... [[32mOK[0m in 0.28s]
+[0m12:00:19.112266 [debug] [Thread-2 (]: Finished running node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:00:19.114040 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.dm_most_popular_categories
+[0m12:00:19.119118 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:00:19.120499 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_most_popular_categories' was left open.
+[0m12:00:19.122151 [debug] [MainThread]: On model.ecommerce_mart.dm_most_popular_categories: Close
+[0m12:00:19.124286 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_price_ranges_analysis' was left open.
+[0m12:00:19.125974 [debug] [MainThread]: On model.ecommerce_mart.dm_price_ranges_analysis: Close
+[0m12:00:19.127660 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_most_common_payment_methods' was left open.
+[0m12:00:19.129277 [debug] [MainThread]: On model.ecommerce_mart.dm_most_common_payment_methods: Close
+[0m12:00:19.130754 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_subscription_effectiveness' was left open.
+[0m12:00:19.132492 [debug] [MainThread]: On model.ecommerce_mart.dm_subscription_effectiveness: Close
+[0m12:00:19.134571 [info ] [MainThread]: 
+[0m12:00:19.136078 [info ] [MainThread]: Finished running 8 table models in 0 hours 0 minutes and 1.35 seconds (1.35s).
+[0m12:00:19.138792 [debug] [MainThread]: Command end result
+[0m12:00:19.228954 [info ] [MainThread]: 
+[0m12:00:19.230930 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:00:19.232574 [info ] [MainThread]: 
+[0m12:00:19.234614 [error] [MainThread]:   Database Error in model dm_customers_with_highest_purchase_amount (models/marts/dm_customers_with_highest_purchase_amount.sql)
+  HTTPDriver for http://clickhouse:8123 received ClickHouse error code 62
+   Code: 62. DB::Exception: Syntax error: failed at position 626 (() (line 24, col 11): ('stg_customers') }
+  GROUP BY customer_id
+  ORDER BY total_spent DESC
+  LIMIT 50
+            )
+          
+          . Expected colon between name and type. (SYNTAX_ERROR) (version 25.4.4.25 (official build))
+[0m12:00:19.235992 [info ] [MainThread]: 
+[0m12:00:19.237838 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=1 SKIP=0 TOTAL=8
+[0m12:00:19.239967 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.4890766, "process_user_time": 3.688003, "process_kernel_time": 1.499517, "process_mem_max_rss": "178264", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:00:19.241686 [debug] [MainThread]: Command `dbt run` failed at 12:00:19.241563 after 2.49 seconds
+[0m12:00:19.243359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fd747c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1fc19a680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd1c06581c0>]}
+[0m12:00:19.245833 [debug] [MainThread]: Flushing usage events
+[0m12:03:31.418893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f828ac97ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82888fb130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82888fb0d0>]}
+
+
+============================== 12:03:31.425529 | b2a1d6de-fd4e-4122-9ccf-213857744b72 ==============================
+[0m12:03:31.425529 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:03:31.428336 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --models marts.*', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:03:31.663060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f828abd3400>]}
+[0m12:03:31.745195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82896ca9e0>]}
+[0m12:03:31.748904 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m12:03:31.878886 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m12:03:32.371638 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 1 files changed.
+[0m12:03:32.374766 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_customer_purchases_pattern.sql
+[0m12:03:32.376737 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_sales_funnel.sql
+[0m12:03:32.378747 [debug] [MainThread]: Partial parsing: added file: ecommerce_mart://models/marts/dm_top_products_by_revenue.sql
+[0m12:03:32.380449 [debug] [MainThread]: Partial parsing: updated file: ecommerce_mart://models/marts/dm_customers_with_highest_purchase_amount.sql
+[0m12:03:32.707436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8288389cf0>]}
+[0m12:03:32.949479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82884c51e0>]}
+[0m12:03:32.951664 [info ] [MainThread]: Found 14 models, 3 sources, 471 macros
+[0m12:03:32.953337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82884c6980>]}
+[0m12:03:32.957720 [info ] [MainThread]: 
+[0m12:03:32.959654 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m12:03:32.970956 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m12:03:32.988389 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:03:33.556070 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m12:03:33.561643 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:33.581234 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__warehouse)
+[0m12:03:33.591945 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "connection_name": "list__warehouse"} */
+select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        engine in ('MaterializedView', 'View'), 'view',
+        engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,0 as is_on_cluster
+          from system.tables as t join system.databases as db on t.database = db.name
+        where schema = 'warehouse'
+      
+
+  ...
+[0m12:03:33.600105 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.606660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f828ac8a140>]}
+[0m12:03:33.609016 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:03:33.610949 [info ] [MainThread]: 
+[0m12:03:33.622493 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:03:33.623461 [debug] [Thread-2 (]: Began running node model.ecommerce_mart.dm_customer_purchases_pattern
+[0m12:03:33.624396 [debug] [Thread-3 (]: Began running node model.ecommerce_mart.dm_customer_segmentation
+[0m12:03:33.625048 [debug] [Thread-4 (]: Began running node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:03:33.626080 [info ] [Thread-1 (]: 1 of 11 START sql table model `warehouse`.`dm_average_purchase_amount_by_gender`  [RUN]
+[0m12:03:33.627938 [info ] [Thread-2 (]: 2 of 11 START sql table model `warehouse`.`dm_customer_purchases_pattern` ...... [RUN]
+[0m12:03:33.629926 [info ] [Thread-3 (]: 3 of 11 START sql table model `warehouse`.`dm_customer_segmentation` ........... [RUN]
+[0m12:03:33.631960 [info ] [Thread-4 (]: 4 of 11 START sql table model `warehouse`.`dm_customers_with_highest_purchase_amount`  [RUN]
+[0m12:03:33.633735 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__warehouse, now model.ecommerce_mart.dm_average_purchase_amount_by_gender)
+[0m12:03:33.636118 [debug] [Thread-2 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.dm_customer_purchases_pattern'
+[0m12:03:33.638438 [debug] [Thread-3 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.dm_customer_segmentation'
+[0m12:03:33.640333 [debug] [Thread-4 (]: Acquiring new clickhouse connection 'model.ecommerce_mart.dm_customers_with_highest_purchase_amount'
+[0m12:03:33.641897 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:03:33.643595 [debug] [Thread-2 (]: Began compiling node model.ecommerce_mart.dm_customer_purchases_pattern
+[0m12:03:33.645779 [debug] [Thread-3 (]: Began compiling node model.ecommerce_mart.dm_customer_segmentation
+[0m12:03:33.647532 [debug] [Thread-4 (]: Began compiling node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:03:33.662439 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.dm_average_purchase_amount_by_gender"
+[0m12:03:33.667659 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecommerce_mart.dm_customer_purchases_pattern"
+[0m12:03:33.673314 [debug] [Thread-3 (]: Writing injected SQL for node "model.ecommerce_mart.dm_customer_segmentation"
+[0m12:03:33.678944 [debug] [Thread-4 (]: Writing injected SQL for node "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"
+[0m12:03:33.687969 [debug] [Thread-4 (]: Began executing node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:03:33.689309 [debug] [Thread-2 (]: Began executing node model.ecommerce_mart.dm_customer_purchases_pattern
+[0m12:03:33.701969 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:03:33.725865 [debug] [Thread-3 (]: Began executing node model.ecommerce_mart.dm_customer_segmentation
+[0m12:03:33.725221 [debug] [Thread-2 (]: Creating new relation dm_customer_purchases_pattern
+[0m12:03:33.720147 [debug] [Thread-4 (]: Creating new relation dm_customers_with_highest_purchase_amount
+[0m12:03:33.797658 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:03:33.799577 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+
+            
+
+    
+        create table `warehouse`.`dm_average_purchase_amount_by_gender__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender
+          )
+        
+        ...
+[0m12:03:33.801838 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:03:33.805059 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:03:33.826555 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:03:33.858675 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+
+    select name, type from system.columns where table = 'dm_average_purchase_amount_by_gender__dbt_backup'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:33.873344 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.884724 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.dm_average_purchase_amount_by_gender"
+[0m12:03:33.900228 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_average_purchase_amount_by_gender__dbt_backup`
+        ("gender", "avg_amount")SELECT gender, AVG(purchase_amount_usd) AS avg_amount
+FROM `warehouse`.`stg_customers`
+GROUP BY gender
+  ...
+[0m12:03:33.908383 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+
+            
+
+    
+        create table `warehouse`.`dm_customer_segmentation__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT age, gender, COUNT(*) AS total 
+FROM `warehouse`.`stg_customers` 
+GROUP BY age, gender ORDER BY total DESC
+          )
+        
+        ...
+[0m12:03:33.918978 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_purchases_pattern: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_purchases_pattern"} */
+
+            
+
+    
+        create table `warehouse`.`dm_customer_purchases_pattern`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT
+  c.gender,
+  p.category_level_1,
+  COUNT(*) AS purchases
+FROM `warehouse`.`stg_sales` s
+JOIN `warehouse`.`stg_customers` c ON s.user_id = c.customer_id
+JOIN `warehouse`.`stg_products` p ON s.product_id = p.unique_id
+GROUP BY c.gender, p.category_level_1
+ORDER BY purchases DESC
+          )
+        
+        ...
+[0m12:03:33.920843 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customers_with_highest_purchase_amount: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"} */
+
+            
+
+    
+        create table `warehouse`.`dm_customers_with_highest_purchase_amount`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT customer_id, SUM(purchase_amount_usd) AS total_spent
+FROM `warehouse`.`stg_customers` 
+GROUP BY customer_id
+ORDER BY total_spent DESC
+LIMIT 50
+          )
+        
+        ...
+[0m12:03:33.923924 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.931708 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+
+    select name, type from system.columns where table = 'dm_customer_segmentation__dbt_backup'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:33.932846 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.936750 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.941946 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_purchases_pattern: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_purchases_pattern"} */
+
+    select name, type from system.columns where table = 'dm_customer_purchases_pattern'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:33.943147 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.948851 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customers_with_highest_purchase_amount: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"} */
+
+    select name, type from system.columns where table = 'dm_customers_with_highest_purchase_amount'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:33.955332 [debug] [Thread-3 (]: Writing runtime sql for node "model.ecommerce_mart.dm_customer_segmentation"
+[0m12:03:33.957167 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.963877 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecommerce_mart.dm_customer_purchases_pattern"
+[0m12:03:33.965647 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:33.968837 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m12:03:33.970843 [debug] [Thread-4 (]: Writing runtime sql for node "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"
+[0m12:03:33.978925 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+EXCHANGE TABLES `warehouse`.`dm_average_purchase_amount_by_gender__dbt_backup` AND `warehouse`.`dm_average_purchase_amount_by_gender` 
+  
+  ...
+[0m12:03:33.979902 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_customer_segmentation__dbt_backup`
+        ("age", "gender", "total")SELECT age, gender, COUNT(*) AS total 
+FROM `warehouse`.`stg_customers` 
+GROUP BY age, gender ORDER BY total DESC
+  ...
+[0m12:03:33.982687 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_purchases_pattern: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_purchases_pattern"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_customer_purchases_pattern`
+        ("gender", "category_level_1", "purchases")SELECT
+  c.gender,
+  p.category_level_1,
+  COUNT(*) AS purchases
+FROM `warehouse`.`stg_sales` s
+JOIN `warehouse`.`stg_customers` c ON s.user_id = c.customer_id
+JOIN `warehouse`.`stg_products` p ON s.product_id = p.unique_id
+GROUP BY c.gender, p.category_level_1
+ORDER BY purchases DESC
+  ...
+[0m12:03:33.988790 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.004106 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customers_with_highest_purchase_amount: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customers_with_highest_purchase_amount"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_customers_with_highest_purchase_amount`
+        ("customer_id", "total_spent")SELECT customer_id, SUM(purchase_amount_usd) AS total_spent
+FROM `warehouse`.`stg_customers` 
+GROUP BY customer_id
+ORDER BY total_spent DESC
+LIMIT 50
+  ...
+[0m12:03:34.011026 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:03:34.032429 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m12:03:34.038201 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_average_purchase_amount_by_gender: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_average_purchase_amount_by_gender"} */
+
+    drop table if exists `warehouse`.`dm_average_purchase_amount_by_gender__dbt_backup` 
+  ...
+[0m12:03:34.043107 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+EXCHANGE TABLES `warehouse`.`dm_customer_segmentation__dbt_backup` AND `warehouse`.`dm_customer_segmentation` 
+  
+  ...
+[0m12:03:34.052639 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.053615 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820e5492a0>]}
+[0m12:03:34.057849 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.061985 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820e54ab60>]}
+[0m12:03:34.062975 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.064878 [info ] [Thread-2 (]: 2 of 11 OK created sql table model `warehouse`.`dm_customer_purchases_pattern` . [[32mOK[0m in 0.41s]
+[0m12:03:34.068387 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820e2a5c60>]}
+[0m12:03:34.070814 [info ] [Thread-4 (]: 4 of 11 OK created sql table model `warehouse`.`dm_customers_with_highest_purchase_amount`  [[32mOK[0m in 0.42s]
+[0m12:03:34.077783 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_customer_segmentation: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_customer_segmentation"} */
+
+    drop table if exists `warehouse`.`dm_customer_segmentation__dbt_backup` 
+  ...
+[0m12:03:34.079976 [debug] [Thread-2 (]: Finished running node model.ecommerce_mart.dm_customer_purchases_pattern
+[0m12:03:34.082750 [info ] [Thread-1 (]: 1 of 11 OK created sql table model `warehouse`.`dm_average_purchase_amount_by_gender`  [[32mOK[0m in 0.43s]
+[0m12:03:34.083985 [debug] [Thread-4 (]: Finished running node model.ecommerce_mart.dm_customers_with_highest_purchase_amount
+[0m12:03:34.087321 [debug] [Thread-2 (]: Began running node model.ecommerce_mart.dm_monthly_sales
+[0m12:03:34.088986 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.090986 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.dm_average_purchase_amount_by_gender
+[0m12:03:34.092871 [debug] [Thread-4 (]: Began running node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:03:34.094618 [info ] [Thread-2 (]: 5 of 11 START sql table model `warehouse`.`dm_monthly_sales` ................... [RUN]
+[0m12:03:34.097849 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820e54bb50>]}
+[0m12:03:34.099563 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.dm_most_popular_categories
+[0m12:03:34.101591 [info ] [Thread-4 (]: 6 of 11 START sql table model `warehouse`.`dm_most_common_payment_methods` ..... [RUN]
+[0m12:03:34.103853 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_customer_purchases_pattern, now model.ecommerce_mart.dm_monthly_sales)
+[0m12:03:34.106419 [info ] [Thread-3 (]: 3 of 11 OK created sql table model `warehouse`.`dm_customer_segmentation` ...... [[32mOK[0m in 0.46s]
+[0m12:03:34.108674 [info ] [Thread-1 (]: 7 of 11 START sql table model `warehouse`.`dm_most_popular_categories` ......... [RUN]
+[0m12:03:34.111155 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_customers_with_highest_purchase_amount, now model.ecommerce_mart.dm_most_common_payment_methods)
+[0m12:03:34.113204 [debug] [Thread-2 (]: Began compiling node model.ecommerce_mart.dm_monthly_sales
+[0m12:03:34.115512 [debug] [Thread-3 (]: Finished running node model.ecommerce_mart.dm_customer_segmentation
+[0m12:03:34.117294 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_average_purchase_amount_by_gender, now model.ecommerce_mart.dm_most_popular_categories)
+[0m12:03:34.119080 [debug] [Thread-4 (]: Began compiling node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:03:34.124865 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecommerce_mart.dm_monthly_sales"
+[0m12:03:34.127151 [debug] [Thread-3 (]: Began running node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:03:34.129089 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.dm_most_popular_categories
+[0m12:03:34.134982 [debug] [Thread-4 (]: Writing injected SQL for node "model.ecommerce_mart.dm_most_common_payment_methods"
+[0m12:03:34.138883 [info ] [Thread-3 (]: 8 of 11 START sql table model `warehouse`.`dm_price_ranges_analysis` ........... [RUN]
+[0m12:03:34.144177 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.dm_most_popular_categories"
+[0m12:03:34.147755 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_customer_segmentation, now model.ecommerce_mart.dm_price_ranges_analysis)
+[0m12:03:34.150453 [debug] [Thread-3 (]: Began compiling node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:03:34.151441 [debug] [Thread-2 (]: Began executing node model.ecommerce_mart.dm_monthly_sales
+[0m12:03:34.152131 [debug] [Thread-4 (]: Began executing node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:03:34.157627 [debug] [Thread-3 (]: Writing injected SQL for node "model.ecommerce_mart.dm_price_ranges_analysis"
+[0m12:03:34.165101 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+
+            
+
+    
+        create table `warehouse`.`dm_monthly_sales__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT toStartOfMonth(time_stamp) AS month, COUNT(*) AS sales_count
+FROM `warehouse`.`stg_sales`
+GROUP BY month
+ORDER BY month
+          )
+        
+        ...
+[0m12:03:34.166921 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.dm_most_popular_categories
+[0m12:03:34.174051 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+
+            
+
+    
+        create table `warehouse`.`dm_most_common_payment_methods__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT payment_method, COUNT(*) AS num
+FROM `warehouse`.`stg_customers`
+GROUP BY payment_method
+ORDER BY num DESC
+          )
+        
+        ...
+[0m12:03:34.184260 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+
+            
+
+    
+        create table `warehouse`.`dm_most_popular_categories__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT category, COUNT(*) AS product_count
+FROM `warehouse`.`stg_products`
+GROUP BY category
+ORDER BY product_count DESC
+          )
+        
+        ...
+[0m12:03:34.187727 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.190334 [debug] [Thread-3 (]: Began executing node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:03:34.195148 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+
+    select name, type from system.columns where table = 'dm_monthly_sales__dbt_backup'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:34.196320 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.204136 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+
+            
+
+    
+        create table `warehouse`.`dm_price_ranges_analysis__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT
+  CASE
+    WHEN (selling_price_upper) < 20 THEN '<$20'
+    WHEN (selling_price_upper) < 50 THEN '$20-49'
+    WHEN (selling_price_upper) < 100 THEN '$50-99'
+    ELSE '$100+'
+  END AS price_range,
+  COUNT(*) AS count
+FROM `warehouse`.`stg_products`
+GROUP BY price_range
+          )
+        
+        ...
+[0m12:03:34.205373 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:03:34.213334 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+
+    select name, type from system.columns where table = 'dm_most_common_payment_methods__dbt_backup'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:34.214770 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.222524 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+
+    select name, type from system.columns where table = 'dm_most_popular_categories__dbt_backup'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:34.226295 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.229573 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecommerce_mart.dm_monthly_sales"
+[0m12:03:34.231140 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.240673 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+
+    select name, type from system.columns where table = 'dm_price_ranges_analysis__dbt_backup'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:34.242308 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.246105 [debug] [Thread-4 (]: Writing runtime sql for node "model.ecommerce_mart.dm_most_common_payment_methods"
+[0m12:03:34.251130 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.dm_most_popular_categories"
+[0m12:03:34.252526 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.254425 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_monthly_sales__dbt_backup`
+        ("month", "sales_count")SELECT toStartOfMonth(time_stamp) AS month, COUNT(*) AS sales_count
+FROM `warehouse`.`stg_sales`
+GROUP BY month
+ORDER BY month
+  ...
+[0m12:03:34.259273 [debug] [Thread-3 (]: Writing runtime sql for node "model.ecommerce_mart.dm_price_ranges_analysis"
+[0m12:03:34.261414 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_most_common_payment_methods__dbt_backup`
+        ("payment_method", "num")SELECT payment_method, COUNT(*) AS num
+FROM `warehouse`.`stg_customers`
+GROUP BY payment_method
+ORDER BY num DESC
+  ...
+[0m12:03:34.265087 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_most_popular_categories__dbt_backup`
+        ("category", "product_count")SELECT category, COUNT(*) AS product_count
+FROM `warehouse`.`stg_products`
+GROUP BY category
+ORDER BY product_count DESC
+  ...
+[0m12:03:34.273290 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_price_ranges_analysis__dbt_backup`
+        ("price_range", "count")SELECT
+  CASE
+    WHEN (selling_price_upper) < 20 THEN '<$20'
+    WHEN (selling_price_upper) < 50 THEN '$20-49'
+    WHEN (selling_price_upper) < 100 THEN '$50-99'
+    ELSE '$100+'
+  END AS price_range,
+  COUNT(*) AS count
+FROM `warehouse`.`stg_products`
+GROUP BY price_range
+  ...
+[0m12:03:34.274673 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.278334 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.281055 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+EXCHANGE TABLES `warehouse`.`dm_monthly_sales__dbt_backup` AND `warehouse`.`dm_monthly_sales` 
+  
+  ...
+[0m12:03:34.282235 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.284969 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+EXCHANGE TABLES `warehouse`.`dm_most_common_payment_methods__dbt_backup` AND `warehouse`.`dm_most_common_payment_methods` 
+  
+  ...
+[0m12:03:34.286259 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.291478 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+EXCHANGE TABLES `warehouse`.`dm_most_popular_categories__dbt_backup` AND `warehouse`.`dm_most_popular_categories` 
+  
+  ...
+[0m12:03:34.292928 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.297283 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+EXCHANGE TABLES `warehouse`.`dm_price_ranges_analysis__dbt_backup` AND `warehouse`.`dm_price_ranges_analysis` 
+  
+  ...
+[0m12:03:34.299047 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.309277 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_monthly_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_monthly_sales"} */
+
+    drop table if exists `warehouse`.`dm_monthly_sales__dbt_backup` 
+  ...
+[0m12:03:34.310396 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.319918 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_common_payment_methods: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_common_payment_methods"} */
+
+    drop table if exists `warehouse`.`dm_most_common_payment_methods__dbt_backup` 
+  ...
+[0m12:03:34.320920 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.332093 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_most_popular_categories: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_most_popular_categories"} */
+
+    drop table if exists `warehouse`.`dm_most_popular_categories__dbt_backup` 
+  ...
+[0m12:03:34.333697 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.343158 [debug] [Thread-3 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_price_ranges_analysis: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_price_ranges_analysis"} */
+
+    drop table if exists `warehouse`.`dm_price_ranges_analysis__dbt_backup` 
+  ...
+[0m12:03:34.344409 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.349808 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f828845dc90>]}
+[0m12:03:34.350809 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.356111 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820e54b220>]}
+[0m12:03:34.357093 [debug] [Thread-3 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.358983 [info ] [Thread-2 (]: 5 of 11 OK created sql table model `warehouse`.`dm_monthly_sales` .............. [[32mOK[0m in 0.25s]
+[0m12:03:34.362127 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820e54b1c0>]}
+[0m12:03:34.364693 [info ] [Thread-4 (]: 6 of 11 OK created sql table model `warehouse`.`dm_most_common_payment_methods`  [[32mOK[0m in 0.25s]
+[0m12:03:34.368256 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820c247700>]}
+[0m12:03:34.369937 [debug] [Thread-2 (]: Finished running node model.ecommerce_mart.dm_monthly_sales
+[0m12:03:34.372312 [info ] [Thread-1 (]: 7 of 11 OK created sql table model `warehouse`.`dm_most_popular_categories` .... [[32mOK[0m in 0.24s]
+[0m12:03:34.375044 [debug] [Thread-4 (]: Finished running node model.ecommerce_mart.dm_most_common_payment_methods
+[0m12:03:34.378079 [info ] [Thread-3 (]: 8 of 11 OK created sql table model `warehouse`.`dm_price_ranges_analysis` ...... [[32mOK[0m in 0.22s]
+[0m12:03:34.379707 [debug] [Thread-2 (]: Began running node model.ecommerce_mart.dm_sales_funnel
+[0m12:03:34.381975 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.dm_most_popular_categories
+[0m12:03:34.383935 [debug] [Thread-4 (]: Began running node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:03:34.386242 [debug] [Thread-3 (]: Finished running node model.ecommerce_mart.dm_price_ranges_analysis
+[0m12:03:34.388769 [info ] [Thread-2 (]: 9 of 11 START sql table model `warehouse`.`dm_sales_funnel` .................... [RUN]
+[0m12:03:34.390454 [debug] [Thread-1 (]: Began running node model.ecommerce_mart.dm_top_products_by_revenue
+[0m12:03:34.392666 [info ] [Thread-4 (]: 10 of 11 START sql table model `warehouse`.`dm_subscription_effectiveness` ..... [RUN]
+[0m12:03:34.395415 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_monthly_sales, now model.ecommerce_mart.dm_sales_funnel)
+[0m12:03:34.397163 [info ] [Thread-1 (]: 11 of 11 START sql table model `warehouse`.`dm_top_products_by_revenue` ........ [RUN]
+[0m12:03:34.398746 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_most_common_payment_methods, now model.ecommerce_mart.dm_subscription_effectiveness)
+[0m12:03:34.400324 [debug] [Thread-2 (]: Began compiling node model.ecommerce_mart.dm_sales_funnel
+[0m12:03:34.402404 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ecommerce_mart.dm_most_popular_categories, now model.ecommerce_mart.dm_top_products_by_revenue)
+[0m12:03:34.404417 [debug] [Thread-4 (]: Began compiling node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:03:34.409676 [debug] [Thread-2 (]: Writing injected SQL for node "model.ecommerce_mart.dm_sales_funnel"
+[0m12:03:34.411781 [debug] [Thread-1 (]: Began compiling node model.ecommerce_mart.dm_top_products_by_revenue
+[0m12:03:34.417616 [debug] [Thread-4 (]: Writing injected SQL for node "model.ecommerce_mart.dm_subscription_effectiveness"
+[0m12:03:34.425096 [debug] [Thread-1 (]: Writing injected SQL for node "model.ecommerce_mart.dm_top_products_by_revenue"
+[0m12:03:34.432292 [debug] [Thread-2 (]: Began executing node model.ecommerce_mart.dm_sales_funnel
+[0m12:03:34.438077 [debug] [Thread-2 (]: Creating new relation dm_sales_funnel
+[0m12:03:34.438943 [debug] [Thread-4 (]: Began executing node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:03:34.439746 [debug] [Thread-1 (]: Began executing node model.ecommerce_mart.dm_top_products_by_revenue
+[0m12:03:34.442864 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_sales_funnel: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_sales_funnel"} */
+
+            
+
+    
+        create table `warehouse`.`dm_sales_funnel`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT interaction_type, COUNT(*) AS count
+FROM `warehouse`.`stg_sales`
+GROUP BY interaction_type
+          )
+        
+        ...
+[0m12:03:34.449782 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+
+            
+
+    
+        create table `warehouse`.`dm_subscription_effectiveness__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT subscription_status, AVG(purchase_amount_usd) AS avg_spent
+FROM `warehouse`.`stg_customers`
+GROUP BY subscription_status
+          )
+        
+        ...
+[0m12:03:34.455979 [debug] [Thread-1 (]: Creating new relation dm_top_products_by_revenue
+[0m12:03:34.463464 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_top_products_by_revenue: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_top_products_by_revenue"} */
+
+            
+
+    
+        create table `warehouse`.`dm_top_products_by_revenue`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS  replicated_deduplication_window=0
+
+                    
+            empty
+          as (
+            SELECT
+  p.product_name,
+  COUNT(*) AS sales_count,
+  AVG(p.selling_price_lower) AS avg_price_lower,
+  COUNT(*) * AVG(p.selling_price_lower) AS est_revenue_lower,
+  AVG(p.selling_price_upper) AS avg_price_upper,
+  COUNT(*) * AVG(p.selling_price_upper) AS est_revenue_upper
+FROM `warehouse`.`sales` s
+JOIN `warehouse`.`stg_products` p ON s.product_id = p.unique_id
+GROUP BY p.product_name
+ORDER BY est_revenue_upper desc
+LIMIT 10
+          )
+        
+        ...
+[0m12:03:34.471979 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.473294 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:03:34.478471 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+
+    select name, type from system.columns where table = 'dm_subscription_effectiveness__dbt_backup'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:34.479582 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.484291 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_sales_funnel: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_sales_funnel"} */
+
+    select name, type from system.columns where table = 'dm_sales_funnel'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:34.491827 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_top_products_by_revenue: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_top_products_by_revenue"} */
+
+    select name, type from system.columns where table = 'dm_top_products_by_revenue'
+    
+      and database = 'warehouse'
+    
+    order by position
+  ...
+[0m12:03:34.493167 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.499305 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.502232 [debug] [Thread-4 (]: Writing runtime sql for node "model.ecommerce_mart.dm_subscription_effectiveness"
+[0m12:03:34.503772 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.506775 [debug] [Thread-2 (]: Writing runtime sql for node "model.ecommerce_mart.dm_sales_funnel"
+[0m12:03:34.512028 [debug] [Thread-1 (]: Writing runtime sql for node "model.ecommerce_mart.dm_top_products_by_revenue"
+[0m12:03:34.518565 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_subscription_effectiveness__dbt_backup`
+        ("subscription_status", "avg_spent")SELECT subscription_status, AVG(purchase_amount_usd) AS avg_spent
+FROM `warehouse`.`stg_customers`
+GROUP BY subscription_status
+  ...
+[0m12:03:34.520612 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_top_products_by_revenue: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_top_products_by_revenue"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_top_products_by_revenue`
+        ("product_name", "sales_count", "avg_price_lower", "est_revenue_lower", "avg_price_upper", "est_revenue_upper")SELECT
+  p.product_name,
+  COUNT(*) AS sales_count,
+  AVG(p.selling_price_lower) AS avg_price_lower,
+  COUNT(*) * AVG(p.selling_price_lower) AS est_revenue_lower,
+  AVG(p.selling_price_upper) AS avg_price_upper,
+  COUNT(*) * AVG(p.selling_price_upper) AS est_revenue_upper
+FROM `warehouse`.`sales` s
+JOIN `warehouse`.`stg_products` p ON s.product_id = p.unique_id
+GROUP BY p.product_name
+ORDER BY est_revenue_upper desc
+LIMIT 10
+  ...
+[0m12:03:34.523197 [debug] [Thread-2 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_sales_funnel: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_sales_funnel"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        insert into `warehouse`.`dm_sales_funnel`
+        ("interaction_type", "count")SELECT interaction_type, COUNT(*) AS count
+FROM `warehouse`.`stg_sales`
+GROUP BY interaction_type
+  ...
+[0m12:03:34.531213 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.535201 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+EXCHANGE TABLES `warehouse`.`dm_subscription_effectiveness__dbt_backup` AND `warehouse`.`dm_subscription_effectiveness` 
+  
+  ...
+[0m12:03:34.536653 [debug] [Thread-2 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.542780 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f828845e950>]}
+[0m12:03:34.544309 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m12:03:34.545905 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m12:03:34.548733 [info ] [Thread-2 (]: 9 of 11 OK created sql table model `warehouse`.`dm_sales_funnel` ............... [[32mOK[0m in 0.15s]
+[0m12:03:34.556159 [debug] [Thread-4 (]: dbt_clickhouse adapter: On model.ecommerce_mart.dm_subscription_effectiveness: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "ecommerce_mart", "target_name": "dev", "node_id": "model.ecommerce_mart.dm_subscription_effectiveness"} */
+
+    drop table if exists `warehouse`.`dm_subscription_effectiveness__dbt_backup` 
+  ...
+[0m12:03:34.560031 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820e54aa40>]}
+[0m12:03:34.563051 [debug] [Thread-2 (]: Finished running node model.ecommerce_mart.dm_sales_funnel
+[0m12:03:34.567732 [info ] [Thread-1 (]: 11 of 11 OK created sql table model `warehouse`.`dm_top_products_by_revenue` ... [[32mOK[0m in 0.16s]
+[0m12:03:34.569205 [debug] [Thread-4 (]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m12:03:34.572517 [debug] [Thread-1 (]: Finished running node model.ecommerce_mart.dm_top_products_by_revenue
+[0m12:03:34.576135 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2a1d6de-fd4e-4122-9ccf-213857744b72', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f820c271b70>]}
+[0m12:03:34.579748 [info ] [Thread-4 (]: 10 of 11 OK created sql table model `warehouse`.`dm_subscription_effectiveness`  [[32mOK[0m in 0.18s]
+[0m12:03:34.581939 [debug] [Thread-4 (]: Finished running node model.ecommerce_mart.dm_subscription_effectiveness
+[0m12:03:34.586014 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:03:34.587911 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_top_products_by_revenue' was left open.
+[0m12:03:34.589718 [debug] [MainThread]: On model.ecommerce_mart.dm_top_products_by_revenue: Close
+[0m12:03:34.591429 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_sales_funnel' was left open.
+[0m12:03:34.592855 [debug] [MainThread]: On model.ecommerce_mart.dm_sales_funnel: Close
+[0m12:03:34.594850 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_price_ranges_analysis' was left open.
+[0m12:03:34.596773 [debug] [MainThread]: On model.ecommerce_mart.dm_price_ranges_analysis: Close
+[0m12:03:34.598863 [debug] [MainThread]: Connection 'model.ecommerce_mart.dm_subscription_effectiveness' was left open.
+[0m12:03:34.600491 [debug] [MainThread]: On model.ecommerce_mart.dm_subscription_effectiveness: Close
+[0m12:03:34.603009 [info ] [MainThread]: 
+[0m12:03:34.605229 [info ] [MainThread]: Finished running 11 table models in 0 hours 0 minutes and 1.64 seconds (1.64s).
+[0m12:03:34.609319 [debug] [MainThread]: Command end result
+[0m12:03:34.700853 [info ] [MainThread]: 
+[0m12:03:34.702614 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:03:34.704126 [info ] [MainThread]: 
+[0m12:03:34.705790 [info ] [MainThread]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 TOTAL=11
+[0m12:03:34.708504 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.3718698, "process_user_time": 4.778003, "process_kernel_time": 1.491286, "process_mem_max_rss": "208420", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:03:34.710427 [debug] [MainThread]: Command `dbt run` succeeded at 12:03:34.710190 after 3.37 seconds
+[0m12:03:34.711941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f828ac97ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8288529a80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82884c7220>]}
+[0m12:03:34.713639 [debug] [MainThread]: Flushing usage events
+[0m12:03:43.797213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f984a97fbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98485ff070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98485ff010>]}
+
+
+============================== 12:03:43.806325 | f3c244d8-730c-4d1a-bad9-ae2e7a1b583c ==============================
+[0m12:03:43.806325 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:03:43.808548 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt test', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:03:44.047837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f3c244d8-730c-4d1a-bad9-ae2e7a1b583c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98485888b0>]}
+[0m12:03:44.120971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f3c244d8-730c-4d1a-bad9-ae2e7a1b583c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9848f23ac0>]}
+[0m12:03:44.124692 [info ] [MainThread]: Registered adapter: clickhouse=1.8.9
+[0m12:03:44.235231 [debug] [MainThread]: checksum: b72588a61004764de5b9a5a46159da2d5d1870e817a9a65ee379ab1be9083c25, vars: {}, profile: , target: dev, version: 1.8.7
+[0m12:03:44.659242 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:03:44.663080 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:03:44.720867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f3c244d8-730c-4d1a-bad9-ae2e7a1b583c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f984813c130>]}
+[0m12:03:44.931503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f3c244d8-730c-4d1a-bad9-ae2e7a1b583c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9848157df0>]}
+[0m12:03:44.933684 [info ] [MainThread]: Found 14 models, 3 sources, 471 macros
+[0m12:03:44.935810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f3c244d8-730c-4d1a-bad9-ae2e7a1b583c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f984816ad10>]}
+[0m12:03:44.940151 [info ] [MainThread]: 
+[0m12:03:44.942757 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m12:03:44.947153 [debug] [MainThread]: Command end result
+[0m12:03:45.089468 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.3785489, "process_user_time": 2.989096, "process_kernel_time": 0.249924, "process_mem_max_rss": "152284", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:03:45.091445 [debug] [MainThread]: Command `dbt test` succeeded at 12:03:45.091251 after 1.38 seconds
+[0m12:03:45.093160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f984a97fbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f984815f550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f984815d3c0>]}
+[0m12:03:45.094824 [debug] [MainThread]: Flushing usage events
