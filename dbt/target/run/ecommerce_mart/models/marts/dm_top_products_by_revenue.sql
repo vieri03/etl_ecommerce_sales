@@ -7,7 +7,7 @@
          
 
 
-        insert into `warehouse`.`dm_top_products_by_revenue`
+        insert into `warehouse`.`dm_top_products_by_revenue__dbt_backup`
         ("product_name", "sales_count", "avg_price_lower", "est_revenue_lower", "avg_price_upper", "est_revenue_upper")SELECT
   p.product_name,
   COUNT(*) AS sales_count,

@@ -7,7 +7,7 @@
          
 
 
-        insert into `warehouse`.`dm_customer_purchases_pattern`
+        insert into `warehouse`.`dm_customer_purchases_pattern__dbt_backup`
         ("gender", "category_level_1", "purchases")SELECT
   c.gender,
   p.category_level_1,
